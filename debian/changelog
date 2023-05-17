@@ -1,3 +1,16 @@
+ca-certificates-java (20190405ubuntu1.1) focal-security; urgency=medium
+
+  * REGRESSION UPDATE: ca-certificates-java can fail to install with
+    openjdk-17 (LP: #2019908).
+    - d/postinst, d/jks-keystore.hook: copy java.security for import tool
+    - d/postinst: Support locating Java 18-21. Use setup_path() from
+      20220719. (LP: #1998065)
+    - debian/jks-keystore.hook: Support locating Java 18-21 to avoid java
+      not found message (LP: #1998065).
+  * d/t/*: add autopkgtests.
+
+ -- Vladimir Petko <vladimir.petko@canonical.com>  Thu, 18 May 2023 09:11:05 +1200
+
 ca-certificates-java (20190405ubuntu1) disco; urgency=medium
 
   * Merge from Debian unstable.  Remaining changes:
